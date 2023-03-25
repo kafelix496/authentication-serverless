@@ -1,0 +1,25 @@
+{
+  "useTabs": false,
+  "printWidth": 80,
+  "tabWidth": 2,
+  "singleQuote": true,
+  "quoteProps": "as-needed",
+  "jsxSingleQuote": false,
+  "trailingComma": "none",
+  "bracketSpacing": true,
+  "bracketSameLine": false,
+  "semi": false,
+  "arrowParens": "always",
+  "importOrder": [
+    "^@iams/(.*)$",
+    "^@resources/(.*)$",
+    "^@functions/(.*)$",
+    "^@middy/(.*)$",
+    "^@libs/(.*)$",
+    "^@utils/(.*)$",
+    "^@(.*)$",
+    "^[./]"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
+}

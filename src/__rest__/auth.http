@@ -1,0 +1,19 @@
+GET {{HOST}}/verify
+Authorization: Bearer {{TOKEN}}
+
+POST {{HOST}}/sign-in
+Content-Type: application/json
+
+{
+  "email": "hello2@google.com",
+  "password": "12345678"
+}
+
+POST {{HOST}}/sign-up
+Content-Type: application/json
+
+{
+  "email": "hello2@google.com",
+  "password": "12345678",
+  "name": "John Doe"
+}
