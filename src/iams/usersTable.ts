@@ -6,9 +6,5 @@ export const usersTableIAM = {
     'dynamodb:UpdateItem',
     'dynamodb:Query'
   ],
-  Resource: [
-    {
-      'Fn::GetAtt': ['usersTableResource', 'Arn']
-    }
-  ]
+  Resource: ['${self:custom.usersTable.arn}']
 }

@@ -27,9 +27,7 @@ const serverlessConfiguration: AWS = {
       shouldStartNameWithService: true
     },
     environment: {
-      USERS_TABLE_NAME: {
-        Ref: 'usersTableResource'
-      },
+      USERS_TABLE_NAME: '${self:custom.usersTable.name}',
       JWT_ACCESS_SECRET: '${env:JWT_ACCESS_SECRET}',
       JWT_REFRESH_SECRET: '${env:JWT_REFRESH_SECRET}'
     },
@@ -56,7 +54,16 @@ const serverlessConfiguration: AWS = {
       usersTableResource
     }
   },
-  custom: {}
+  custom: {
+    usersTable: {
+      name: {
+        Ref: 'usersTableResource'
+      },
+      arn: {
+        'Fn::GetAtt': ['usersTableResource', 'Arn']
+      }
+    }
+  }
 }
 
 module.exports = serverlessConfiguration
